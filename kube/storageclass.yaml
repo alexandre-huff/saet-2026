@@ -1,0 +1,7 @@
+apiVersion: storage.k8s.io/v1
+kind: StorageClass
+metadata:
+  name: armazenamento-rapido
+provisioner: microk8s.io/hostpath # Provisionador local do MicroK8s
+reclaimPolicy: Retain           # Mantém os dados no disco caso o PVC seja excluído
+volumeBindingMode: WaitForFirstConsumer
